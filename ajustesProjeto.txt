@@ -1,0 +1,28 @@
+
+Primeiro erro: src\components\MyList.js: src\components\MyList.js:Invalid call at line 56: require("./src/images/" + u.image)
+
+De: 
+<Image source={require("./src/images/" + u.image)} ></Image>
+Para:
+<Image source={u.image} ></Image>
+
++
+
+De:
+image: "img1.png",
+Para:
+image: require('../images/img1.png'),
+
+Segundo erro: Undefined is not a function
+
+De:
+componentWillMount() { this.getListOfPictures(); };
+Para:
+componentWillMount = () => { this.getListOfData(); };
+
+Correção de importação:
+
+De:
+import {MyList} from './src/components/MyList';
+Para:
+import MyList from './src/components/MyList';
